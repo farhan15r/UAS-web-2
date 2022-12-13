@@ -94,7 +94,8 @@ class Auth extends BaseController
                 //membuat session
                 session()->set([
                     'username' => $data['username'],
-                    'is_login' => TRUE
+                    'is_login' => TRUE,
+                    'is_admin' => $data['is_admin']
                 ]);
 
                 return redirect()->to('/');

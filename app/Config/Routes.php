@@ -44,6 +44,8 @@ $routes->get('/register', 'Auth::register');
 $routes->post('/register', 'Auth::register_post');
 $routes->get('/logout', 'Auth::logout');
 
+$routes->get('/dashboard', 'Dashboard::index', ['filter' => 'isLogin', 'filter' => 'isAdmin']);
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
