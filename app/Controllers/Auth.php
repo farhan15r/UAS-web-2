@@ -95,7 +95,7 @@ class Auth extends BaseController
                 session()->set([
                     'username' => $data['username'],
                     'is_login' => TRUE,
-                    'is_admin' => $data['is_admin']
+                    'is_admin' => (bool) $data['is_admin']
                 ]);
 
                 return redirect()->to('/');

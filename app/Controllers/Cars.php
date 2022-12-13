@@ -47,23 +47,21 @@ class Cars extends BaseController
     $color = $this->request->getVar('color');
 
     $rules = [
-      'image' => 'uploaded[image]|mime_in[image,image/jpg,image/jpeg,image/png]|max_size[image,1024]',
+      'image' => 'uploaded[image]|mime_in[image,image/jpg,image/jpeg,image/png]',
       'brand' => 'required',
-      'type' => 'required',
       'price' => 'required',
       'license_plate' => 'required|is_unique[cars.license_plate]',
       'color' => 'required'
     ];
 
     if (!$this->validate($rules)) {
-      return redirect()->back()->withInput()->with('validation', $this->validator);
+      return redirect()->back()->withInput()->with('validation', $this->validator->getErrors());
     } else {
       $image->move(ROOTPATH . 'public/assets/images/cars');
 
       $data = [
         'image' => $image->getName(),
         'brand' => $brand,
-        'type' => $type,
         'price' => $price,
         'license_plate' => $license_plate,
         'color' => $color
@@ -72,7 +70,7 @@ class Cars extends BaseController
       $this->carsModel->insert($data);
 
       session()->setFlashdata('success', 'Add Car Success');
-      return redirect()->to('/dashboard/cars/list')->with('success', 'Add Car Success!');
+      return redirect()->to('/dashboard/cars')->with('success', 'Add Car Success!');
     }
   }
 }

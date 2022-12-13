@@ -11,11 +11,13 @@
       </div>
       <div class="card-body">
         <form action="add" method="post" enctype="multipart/form-data">
+          <?php $validation = session()->getFlashdata('validation') ?>
           <div class="row">
             <div class="col-md-12">
               <div class="form-group">
                 <label class="form-control-label">Brand</label>
-                <input class="form-control" name="brand" type="text" placeholder="Avanza or X-Pander" required>
+                <input class="form-control" name="brand" type="text" placeholder="Avanza or X-Pander">
+                <small class="form-text text-danger"></small>
               </div>
             </div>
             <div class="col-md-12">
@@ -31,25 +33,25 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label class="form-control-label">License Plate</label>
-                <input class="form-control" name="license_plate" type="text" placeholder="B 123 ABC" required>
+                <input class="form-control" name="license_plate" type="text" placeholder="B 123 ABC">
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
                 <label class="form-control-label">Color</label>
-                <input class="form-control" name="color" type="text" placeholder="Blue" required>
+                <input class="form-control" name="color" type="text" placeholder="Blue">
               </div>
             </div>
             <div class="col-md-12">
               <div class="form-group">
                 <label class="form-control-label">Price</label>
-                <input class="form-control" name="price" type="number" placeholder="1000000" required>
+                <input class="form-control" name="price" type="number" placeholder="1000000">
               </div>
             </div>
             <div class="col-md-12">
               <div class="form-group">
                 <label class="form-control-label">Image</label>
-                <input class="form-control" name="image" type="file" accept="image/png, image/gif, image/jpeg" required>
+                <input class="form-control" name="image" type="file" accept="image/png, image/gif, image/jpeg">
               </div>
             </div>
           </div>
