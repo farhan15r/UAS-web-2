@@ -45,6 +45,9 @@ $routes->post('/register', 'Auth::register_post');
 $routes->get('/logout', 'Auth::logout');
 
 $routes->get('/dashboard', 'Dashboard::index', ['filter' => 'isLogin', 'filter' => 'isAdmin']);
+$routes->get('/dashboard/cars', 'Cars::list', ['filter' => 'isLogin', 'filter' => 'isAdmin']);
+$routes->get('/dashboard/cars/add', 'Cars::add', ['filter' => 'isLogin', 'filter' => 'isAdmin']);
+$routes->post('/dashboard/cars/add', 'Cars::add_insert', ['filter' => 'isLogin', 'filter' => 'isAdmin']);
 
 /*
  * --------------------------------------------------------------------

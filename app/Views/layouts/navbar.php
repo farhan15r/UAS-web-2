@@ -17,6 +17,9 @@
               <li class="has-sub">
                 <a href="javascript:void(0)"><?= session()->get('username') ?></a>
                 <ul class="sub-menu">
+                  <?php if (session()->has('is_admin')) : ?>
+                    <li class="scroll-to-section"><a href="/dashboard">Dashboard</a></li>
+                  <?php endif ?>
                   <li class="scroll-to-section"><a href="/logout">Logout</a></li>
                 </ul>
               </li>
