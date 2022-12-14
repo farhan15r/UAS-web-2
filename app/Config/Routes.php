@@ -45,9 +45,21 @@ $routes->post('/register', 'Auth::register_post');
 $routes->get('/logout', 'Auth::logout');
 
 $routes->get('/dashboard', 'Dashboard::index', ['filter' => 'isLogin', 'filter' => 'isAdmin']);
+
 $routes->get('/dashboard/cars', 'Cars::list', ['filter' => 'isLogin', 'filter' => 'isAdmin']);
 $routes->get('/dashboard/cars/add', 'Cars::add', ['filter' => 'isLogin', 'filter' => 'isAdmin']);
 $routes->post('/dashboard/cars/add', 'Cars::add_insert', ['filter' => 'isLogin', 'filter' => 'isAdmin']);
+$routes->get('/dashboard/cars/(:segment)', 'Cars::edit/$1', ['filter' => 'isLogin', 'filter' => 'isAdmin']);
+$routes->post('/dashboard/cars/(:segment)', 'Cars::edit_save/$1', ['filter' => 'isLogin', 'filter' => 'isAdmin']);
+$routes->get('/dashboard/cars/delete/(:segment)', 'Cars::delete/$1', ['filter' => 'isLogin', 'filter' => 'isAdmin']);
+
+$routes->get('/dashboard/types', 'Types::list', ['filter' => 'isLogin', 'filter' => 'isAdmin']);
+$routes->get('/dashboard/types/add', 'Types::add', ['filter' => 'isLogin', 'filter' => 'isAdmin']);
+$routes->post('/dashboard/types/add', 'Types::add_insert', ['filter' => 'isLogin', 'filter' => 'isAdmin']);
+$routes->get('/dashboard/types/(:segment)', 'Types::edit/$1', ['filter' => 'isLogin', 'filter' => 'isAdmin']);
+$routes->post('/dashboard/types/(:segment)', 'Types::edit_save/$1', ['filter' => 'isLogin', 'filter' => 'isAdmin']);
+$routes->get('/dashboard/types/delete/(:segment)', 'Types::delete/$1', ['filter' => 'isLogin', 'filter' => 'isAdmin']);
+
 
 /*
  * --------------------------------------------------------------------

@@ -98,6 +98,10 @@ class Auth extends BaseController
                     'is_admin' => (bool) $data['is_admin']
                 ]);
 
+                if ($data['is_admin']) {
+                    return redirect()->to('/dashboard');
+                }
+
                 return redirect()->to('/');
             } else {
                 return redirect()->route('login')->with('error', 'Invalid login');
