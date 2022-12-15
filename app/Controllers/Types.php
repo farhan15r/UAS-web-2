@@ -15,7 +15,7 @@ class Types extends BaseController
 
   public function list()
   {
-    $types = $this->typesModel->findAll();
+    $types = $this->typesModel->select('types.id, types.name, COUNT(cars.id) as total_cars')->join('cars', 'cars.type_id = types.id', 'left')->groupBy('types.id')->findAll();
 
     $data = [
       'title' => 'Types of Car List | RentCar',

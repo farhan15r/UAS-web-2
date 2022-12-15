@@ -130,6 +130,15 @@ figcaption {
   margin-bottom: 15px;
 }
 
+.bg-main {
+  background: rgb(85, 0, 227);
+  background: linear-gradient(
+    90deg,
+    rgba(85, 0, 227, 1) 0%,
+    rgba(198, 61, 255, 1) 100%
+  );
+}
+
 /* end custom */
 
 .clearfix:after {

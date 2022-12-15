@@ -40,7 +40,7 @@
                     <p class="text-sm font-weight-bold mb-0"><?= $type['name'] ?></p>
                   </td>
                   <td class="px-4">
-                    <p class="text-sm font-weight-bold mb-0">10</p>
+                    <p class="text-sm font-weight-bold mb-0"><?= $type['total_cars'] ?></p>
                   </td>
                   <td class="px-4 align-middle">
                     <a href="types/<?= $type['id'] ?>" class="text-secondary font-weight-bold text-xs">

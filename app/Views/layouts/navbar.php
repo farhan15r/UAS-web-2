@@ -10,9 +10,8 @@
           <!-- ***** Logo End ***** -->
           <!-- ***** Menu Start ***** -->
           <ul class="nav">
-            <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-            <li class="scroll-to-section"><a href="#services">Services</a></li>
-            <li class="scroll-to-section"><a href="#projects">Projects</a></li>
+            <li class="scroll-to-section"><a href="/" class="active">Home</a></li>
+            <li class="scroll-to-section"><a href="/cars">All Cars</a></li>
             <?php if (session()->has('is_login')) : ?>
               <li class="has-sub">
                 <a href="javascript:void(0)"><?= session()->get('username') ?></a>
