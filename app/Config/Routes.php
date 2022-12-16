@@ -44,6 +44,8 @@ $routes->get('/register', 'Auth::register');
 $routes->post('/register', 'Auth::register_post');
 $routes->get('/logout', 'Auth::logout');
 
+$routes->get('/order/(:segment)', 'Order::index/$1', ['filter' => 'isLogin']);
+
 $routes->get('/dashboard', 'Dashboard::index', ['filter' => 'isLogin', 'filter' => 'isAdmin']);
 
 $routes->get('/dashboard/cars', 'Cars::list', ['filter' => 'isLogin', 'filter' => 'isAdmin']);

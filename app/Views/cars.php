@@ -27,7 +27,7 @@
                 </div>
               </div>
               <div class="car-footer text-center">
-                <a href="" class="h5 text-white">
+                <a href="order/<?= $car['id'] ?>" class="h5 text-white">
                   <div class="bg-main py-2">
                     Rent Now Only <?= $car['price'] ?> / Day
                   </div>

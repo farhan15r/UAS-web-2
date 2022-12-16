@@ -93,6 +93,7 @@ class Auth extends BaseController
             if ($data) {
                 //membuat session
                 session()->set([
+                    'id' => $data['id'],
                     'username' => $data['username'],
                     'is_login' => TRUE,
                     'is_admin' => (bool) $data['is_admin']

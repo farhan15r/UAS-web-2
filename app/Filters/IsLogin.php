@@ -11,7 +11,7 @@ class IsLogin implements FilterInterface
   public function before(RequestInterface $request, $arguments = null)
   {
     if (!session()->get('is_login')) {
-      return redirect()->to('/login')->with('error', 'Silahkan login terlebih dahulu');
+      return redirect()->to('/login')->with('error', 'Please Login First!');
     }
   }
 
