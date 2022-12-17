@@ -61,4 +61,38 @@ class Order extends BaseController
     session()->setFlashdata('success', 'Order Success');
     return redirect()->to('/')->with('success', 'Order Success, Please Wait for Confirmation!');
   }
+
+  public function my_orders()
+  {
+    $user_id = session()->get('id');
+
+    $orders = $this->ordersModel->select('orders.*, cars.brand as car_brand, cars.image as car_image, cars.price as car_price')
+      ->join('cars', 'orders.car_id = cars.id')
+      ->where('orders.user_id', $user_id)
+      ->findAll();
+
+    // price format
+    foreach ($orders as $order => $value) {
+      $orders[$order]['car_price'] = "Rp" . number_format($value['car_price'], 0, ',', '.');
+    }
+
+    foreach ($orders as $order => $value) {
+      $orders[$order]['subtotal'] = "Rp" . number_format($value['subtotal'], 0, ',', '.');
+    }
+
+    foreach ($orders as $order => $value) {
+      $orders[$order]['total_fine'] = "Rp" . number_format($value['total_fine'], 0, ',', '.');
+    }
+
+    foreach ($orders as $order => $value) {
+      $orders[$order]['total'] = "Rp" . number_format($value['total'], 0, ',', '.');
+    }
+
+    $data = [
+      'title' => 'Order History | RentCar',
+      'orders' => $orders
+    ];
+
+    return view('my_orders', $data);
+  }
 }

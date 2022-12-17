@@ -12,7 +12,15 @@
         <?php endif ?>
         <div class="d-flex">
           <h6>Table of Cars</h6>
-          <a class="ms-auto btn btn-primary" href="cars/add">
+          <a class="ms-auto btn btn-success me-2" href="exportex/cars">
+            <i class="fa fa-file-excel-o text-white text-sm opacity-10 me-3"></i>
+            Export Excel
+          </a>
+          <a class="btn btn-danger me-2" href="exportpdf/cars">
+            <i class="fa fa-file-pdf-o text-white text-sm opacity-10 me-3"></i>
+            Export PDF
+          </a>
+          <a class="btn btn-primary" href="cars/add">
             <i class="fa fa-plus text-white text-sm opacity-10 me-3"></i>
             Add New Car
           </a>

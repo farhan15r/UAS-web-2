@@ -47,6 +47,9 @@ $routes->get('/logout', 'Auth::logout');
 $routes->get('/order/(:segment)', 'Order::index/$1', ['filter' => 'isLogin']);
 $routes->post('/order/(:segment)', 'Order::order_insert/$1', ['filter' => 'isLogin']);
 
+$routes->get('/myorders', 'Order::my_orders', ['filter' => 'isLogin']);
+$routes->get('/invoice/(:segment)', 'Export::invoice/$1', ['filter' => 'isLogin']);
+
 $routes->get('/dashboard', 'Dashboard::index', ['filter' => 'isLogin', 'filter' => 'isAdmin']);
 
 $routes->get('/dashboard/cars', 'Cars::list', ['filter' => 'isLogin', 'filter' => 'isAdmin']);
@@ -68,6 +71,11 @@ $routes->get('/dashboard/orders/reject/(:segment)', 'Orders::reject/$1', ['filte
 $routes->get('/dashboard/orders/accept/(:segment)', 'Orders::accept/$1', ['filter' => 'isLogin', 'filter' => 'isAdmin']);
 $routes->get('/dashboard/orders/return/(:segment)', 'Orders::return/$1', ['filter' => 'isLogin', 'filter' => 'isAdmin']);
 $routes->post('/dashboard/orders/return/(:segment)', 'Orders::return_post/$1', ['filter' => 'isLogin', 'filter' => 'isAdmin']);
+
+$routes->get('/dashboard/orders/invoice/(:segment)', 'Export::invoice/$1', ['filter' => 'isLogin', 'filter' => 'isAdmin']);
+$routes->get('/dashboard/exportex/cars', 'Export::excel_cars', ['filter' => 'isLogin', 'filter' => 'isAdmin']);
+$routes->get('/dashboard/exportex/orders', 'Export::excel_orders', ['filter' => 'isLogin', 'filter' => 'isAdmin']);
+$routes->get('/dashboard/exportpdf/cars', 'Export::pdf_cars', ['filter' => 'isLogin', 'filter' => 'isAdmin']);
 
 /*
  * --------------------------------------------------------------------

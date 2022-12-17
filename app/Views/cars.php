@@ -22,8 +22,8 @@
               <div class="col-xl-8">
                 <div class="card-body">
                   <h5 class="card-title"><?= $car['brand'] ?></h5>
-                  <span class="card-text">Color : Black </span>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  <span class="card-text">Color : <?= $car['color'] ?></span><br>
+                  <span class="card-text">Type : <?= $car['type'] ?></span><br>
                 </div>
               </div>
               <div class="car-footer text-center">

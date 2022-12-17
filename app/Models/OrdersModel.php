@@ -7,5 +7,5 @@ use CodeIgniter\Model;
 class OrdersModel extends Model
 {
   protected $table = 'orders';
-  protected $allowedFields = ['user_id', 'car_id', 'date_start', 'date_end', 'subtotal', 'status', 'total_fine', 'total'];
+  protected $allowedFields = ['user_id', 'car_id', 'date_start', 'date_end', 'date_return', 'subtotal', 'status', 'total_fine', 'total'];
 }

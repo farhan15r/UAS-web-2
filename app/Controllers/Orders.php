@@ -165,14 +165,13 @@ class Orders extends BaseController
     $total = $subtotal + $TotalFine;
 
     $data = [
+      'date_return' => date('Y-m-d'),
       'total_fine' => $TotalFine,
       'total' => $total,
       'status' => 'Finished'
     ];
 
     $this->ordersModel->update($id, $data);
-
-
 
     session()->setFlashdata('success', 'Order Finished');
     return redirect()->to('/dashboard/orders');

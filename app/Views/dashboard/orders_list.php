@@ -12,6 +12,10 @@
         <?php endif ?>
         <div class="d-flex">
           <h6>Table of Orders</h6>
+          <a class="ms-auto btn btn-success me-2" href="exportex/orders">
+            <i class="fa fa-file-excel-o text-white text-sm opacity-10 me-3"></i>
+            Export Excel
+          </a>
         </div>
 
       </div>
@@ -78,8 +82,14 @@
                       </a>
                     <?php endif ?>
                     <?php if ($order['status'] == 'On Rent') : ?>
-                      <a href="orders/return/<?= $order['id'] ?>" class="badge badge-xs bg-gradient-warning   text-xs">
+                      <a href="orders/return/<?= $order['id'] ?>" class="badge badge-xs bg-gradient-warning text-xs">
                         <i class="fa fa-car text-xs text-white opacity-10"></i>
+                      </a>
+                    <?php endif ?>
+                    <?php if ($order['status'] == 'Finished') : ?>
+                      <a href="orders/invoice/<?= $order['id'] ?>" class="badge badge-xs bg-gradient-warning text-xxs">
+                        <i class="fa fa-file-pdf-o text-xs text-white opacity-10 me-1"></i>
+                        Invoice
                       </a>
                     <?php endif ?>
                   </td>

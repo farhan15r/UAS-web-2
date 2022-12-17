@@ -13,7 +13,10 @@ class Home extends BaseController
 
     public function index()
     {
-        $cars = $this->carsModel->findAll();
+        $cars = $this->carsModel
+            ->where('cars.status', 'Available')
+            ->limit(4)
+            ->find();
 
         // change price
         foreach ($cars as $car => $value) {
@@ -30,7 +33,10 @@ class Home extends BaseController
 
     public function cars()
     {
-        $cars = $this->carsModel->findAll();
+        $cars = $this->carsModel->select('cars.*, types.name as type')
+            ->join('types', 'cars.type_id = types.id')
+            ->where('cars.status', 'Available')
+            ->findAll();
 
         // change price
         foreach ($cars as $car => $value) {
