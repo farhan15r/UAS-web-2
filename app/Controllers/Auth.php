@@ -50,6 +50,8 @@ class Auth extends BaseController
                 'no_tlp' => $no_tlp,
                 'password' => sha1($password),
             ];
+            // get last query
+            dd($this->UsersModel->getLastQuery());
 
             $this->UsersModel->insert($data);
 
@@ -96,10 +98,12 @@ class Auth extends BaseController
                     'id' => $data['id'],
                     'username' => $data['username'],
                     'is_login' => TRUE,
-                    'is_admin' => (bool) $data['is_admin']
                 ]);
 
                 if ($data['is_admin']) {
+                    session()->set([
+                        'is_admin' => TRUE,
+                    ]);
                     return redirect()->to('/dashboard');
                 }
 

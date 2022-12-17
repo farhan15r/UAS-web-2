@@ -53,7 +53,14 @@
                     <p class="text-sm font-weight-bold mb-0"><?= $car['license_plate'] ?></p>
                   </td>
                   <td class="px-4 align-middle text-sm">
-                    <span class="badge badge-sm bg-gradient-success">Online</span>
+                    <?php switch ($car['status']) {
+                      case 'Available':
+                        echo '<span class="badge badge-sm bg-gradient-success">Available</span>';
+                        break;
+                      case 'On Rent':
+                        echo '<span class="badge badge-sm bg-gradient-warning">On Rent</span>';
+                        break;
+                    } ?>
                   </td>
                   <td class="px-4 align-middle">
                     <a href="cars/<?= $car['id'] ?>" class="text-secondary font-weight-bold text-xs">

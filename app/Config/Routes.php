@@ -45,6 +45,7 @@ $routes->post('/register', 'Auth::register_post');
 $routes->get('/logout', 'Auth::logout');
 
 $routes->get('/order/(:segment)', 'Order::index/$1', ['filter' => 'isLogin']);
+$routes->post('/order/(:segment)', 'Order::order_insert/$1', ['filter' => 'isLogin']);
 
 $routes->get('/dashboard', 'Dashboard::index', ['filter' => 'isLogin', 'filter' => 'isAdmin']);
 
@@ -62,6 +63,11 @@ $routes->get('/dashboard/types/(:segment)', 'Types::edit/$1', ['filter' => 'isLo
 $routes->post('/dashboard/types/(:segment)', 'Types::edit_save/$1', ['filter' => 'isLogin', 'filter' => 'isAdmin']);
 $routes->get('/dashboard/types/delete/(:segment)', 'Types::delete/$1', ['filter' => 'isLogin', 'filter' => 'isAdmin']);
 
+$routes->get('/dashboard/orders', 'Orders::list', ['filter' => 'isLogin', 'filter' => 'isAdmin']);
+$routes->get('/dashboard/orders/reject/(:segment)', 'Orders::reject/$1', ['filter' => 'isLogin', 'filter' => 'isAdmin']);
+$routes->get('/dashboard/orders/accept/(:segment)', 'Orders::accept/$1', ['filter' => 'isLogin', 'filter' => 'isAdmin']);
+$routes->get('/dashboard/orders/return/(:segment)', 'Orders::return/$1', ['filter' => 'isLogin', 'filter' => 'isAdmin']);
+$routes->post('/dashboard/orders/return/(:segment)', 'Orders::return_post/$1', ['filter' => 'isLogin', 'filter' => 'isAdmin']);
 
 /*
  * --------------------------------------------------------------------

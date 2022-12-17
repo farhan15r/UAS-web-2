@@ -71,7 +71,8 @@ class Cars extends BaseController
         'brand' => $brand,
         'price' => $price,
         'license_plate' => $license_plate,
-        'color' => $color
+        'color' => $color,
+        'status' => 'Available'
       ];
 
       $this->carsModel->insert($data);
