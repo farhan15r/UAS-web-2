@@ -15,6 +15,10 @@ use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 class Export extends BaseController
 {
+  private $ordersModel;
+  private $finesOrdersModel;
+  private $carsModel;
+
   public function __construct()
   {
     //load model

@@ -9,6 +9,11 @@ use App\Models\FinesOrdersModel;
 
 class Orders extends BaseController
 {
+  private $ordersModel;
+  private $carsModel;
+  private $finesModel;
+  private $finesOrdersModel;
+
   public function __construct()
   {
     $this->ordersModel = new OrdersModel();

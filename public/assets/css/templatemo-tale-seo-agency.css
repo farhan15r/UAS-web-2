@@ -943,16 +943,16 @@ Banner Style
 
 .main-banner {
   position: relative;
-  padding: 295px 0px 185px 0px;
+  padding: 295px 0px 0px 0px;
 }
 
 .main-banner:after {
-  content: url(../images/banner-right.png);
-  top: -1px;
+  content: url(../images/bilbil.jpeg);
+  top: 100px;
   right: 0;
   position: absolute;
-  width: 861px;
-  height: 746px;
+  width: 800px;
+  height: 480px;
   z-index: -1;
 }
 

@@ -6,6 +6,8 @@ use App\Models\UsersModel;
 
 class Auth extends BaseController
 {
+    private $UsersModel;
+
     public function __construct()
     {
         $this->UsersModel = new UsersModel();
@@ -50,9 +52,6 @@ class Auth extends BaseController
                 'no_tlp' => $no_tlp,
                 'password' => sha1($password),
             ];
-            // get last query
-            dd($this->UsersModel->getLastQuery());
-
             $this->UsersModel->insert($data);
 
             session()->setFlashdata('success', 'Register Success');

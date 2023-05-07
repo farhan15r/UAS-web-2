@@ -7,6 +7,9 @@ use App\Models\OrdersModel;
 
 class Order extends BaseController
 {
+  private $carsModel;
+  private $ordersModel;
+
   public function __construct()
   {
     $this->carsModel = new CarsModel();

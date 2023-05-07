@@ -7,6 +7,9 @@ use App\Models\CarsModel;
 
 class Types extends BaseController
 {
+  private $typesModel;
+  private $carsModel;
+
   public function __construct()
   {
     $this->typesModel = new TypesModel();

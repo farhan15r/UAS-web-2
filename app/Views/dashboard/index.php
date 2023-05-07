@@ -126,7 +126,7 @@
     type: "doughnut",
     data: {
       labels: [
-        <?php foreach ($orders as $order) : ?> "<?= $order['type_name'] ?>",
+        <?php foreach ($typeOfCars as $typeOfCar) : ?> "<?= $order['type_name'] ?>",
         <?php endforeach; ?>
       ],
       datasets: [{
@@ -144,7 +144,7 @@
         ],
         fill: true,
         data: [
-          <?php foreach ($orders as $order) : ?> "<?= $order['total'] ?>",
+          <?php foreach ($typeOfCars as $typeOfCar) : ?> "<?= $order['total'] ?>",
           <?php endforeach; ?>
         ],
         maxBarThickness: 6

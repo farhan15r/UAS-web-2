@@ -6,6 +6,8 @@ use App\Models\CarsModel;
 
 class Home extends BaseController
 {
+    private $carsModel;
+
     public function __construct()
     {
         $this->carsModel = new CarsModel();
